@@ -1,0 +1,37 @@
+
+.clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	
+	&:after {
+		clear: both;
+	}
+}
+
+.btn-modify(@bg, @color) {
+	background: @bg;
+	box-shadow: 0 4px 0 darken(@bg, 5%);
+	color: @color;
+	
+	.transition(.4s);
+	
+	&:hover {
+		cursor: pointer;
+		background: darken(@bg, 5%);
+		box-shadow: 0 4px 0 darken(@bg, 20%);
+	}
+}
+
+.square(@size) {
+	width: @size;
+	height: @size;
+}
+
+.transition(@time) {
+	-webkit-transition: all @time;
+	-mos-transition: all @time;
+	transition: all @time;
+}
